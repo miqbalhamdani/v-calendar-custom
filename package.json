@@ -1,5 +1,5 @@
 {
-  "name": "v-calendar",
+  "name": "v-calendar-custom",
   "version": "1.0.1",
   "description": "A clean and extendable plugin for building simple attributed calendars in Vue.js.",
   "keywords": [
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nathanreyes/v-calendar"
+    "url": "https://github.com/miqbalhamdani/v-calendar-custom"
   },
   "private": false,
   "license": "MIT",
