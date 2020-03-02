@@ -227,6 +227,6 @@ export default {
 .vc-grid-cell {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: baseline;
 }
 </style>
