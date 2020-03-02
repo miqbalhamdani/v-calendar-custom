@@ -20,6 +20,7 @@ export const rootMixin = {
     maxDate: null,
     disabledDates: null,
     availableDates: null,
+    holiday: Array,
   },
   computed: {
     $theme() {

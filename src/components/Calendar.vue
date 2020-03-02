@@ -53,6 +53,7 @@ export default {
           minPage: this.minPage_,
           maxPage: this.maxPage_,
           canMove: this.canMove,
+          holiday: this.holiday,
         },
         on: {
           ...this.$listeners,
@@ -268,6 +269,7 @@ export default {
     transition: String,
     attributes: [Object, Array],
     disablePageSwipe: Boolean,
+    holiday: Array,
   },
   data() {
     return {

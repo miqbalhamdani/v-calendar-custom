@@ -28,6 +28,7 @@ import _some from 'lodash/some';
 import _head from 'lodash/head';
 import _last from 'lodash/last';
 import _uniq from 'lodash/uniq';
+import _filter from 'lodash/filter';
 
 // Type checkers
 export const getType = value =>
@@ -64,3 +65,4 @@ export const some = _some;
 export const head = _head;
 export const last = _last;
 export const uniq = _uniq;
+export const filter = _filter;

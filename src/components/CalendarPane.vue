@@ -1,8 +1,10 @@
 <script>
+import { format } from 'date-fns';
 import Popover from './Popover';
 import PopoverRef from './PopoverRef';
 import CalendarNav from './CalendarNav';
 import CalendarDay from './CalendarDay';
+import CalendarHoliday from './CalendarHoliday';
 import Grid from './Grid';
 import {
   propOrDefaultMixin,
@@ -125,13 +127,23 @@ export default {
       ],
     );
 
+    const holidays = h(
+      CalendarHoliday,
+      {
+        props: {
+          holiday: this.monthHoliday,
+          masks: this.masks,
+        },
+      },
+    );
+
     return h(
       'div',
       {
         class: 'vc-pane',
         ref: 'pane',
       },
-      [header, weeks],
+      [header, weeks, holidays],
     );
   },
   props: {
@@ -142,6 +154,7 @@ export default {
       type: Function,
       default: () => true,
     },
+    holiday: Array,
   },
   data() {
     return {
@@ -166,6 +179,14 @@ export default {
       return this.locale
         .getWeekdayDates()
         .map(d => this.format(d, this.masks.weekdays));
+    },
+    monthHoliday() {
+      if (this.holiday) {
+        const currentMonthYear = format(new Date(this.page.key), 'yyyy-MM');
+        return this.holiday.filter(day => (day.date.indexOf(currentMonthYear) !== -1));
+      }
+
+      return null;
     },
   },
   methods: {

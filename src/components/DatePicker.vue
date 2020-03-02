@@ -31,6 +31,7 @@ export default {
           maxDate: this.maxDate,
           disabledDates: this.disabledDates,
           availableDates: this.availableDates,
+          holiday: this.holiday,
         },
         on: {
           ...this.$listeners,
