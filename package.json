@@ -1,6 +1,6 @@
 {
   "name": "v-calendar-custom",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A clean and extendable plugin for building simple attributed calendars in Vue.js.",
   "keywords": [
     "vue",
@@ -16,7 +16,7 @@
   ],
   "homepage": "https://vcalendar.io",
   "author": "Nathan Reyes <nathanreyes@me.com>",
-  "main": "lib/v-calendar.umd.min.js",
+  "main": "lib/v-calendar-custom.umd.min.js",
   "files": [
     "src",
     "lib"
@@ -31,7 +31,7 @@
     "tag": "next"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve src/lib.js",
     "build": "yarn build:lib && yarn build:calendar && yarn build:date-picker && yarn build:popover && yarn build:popover-ref && yarn build:popover-row",
     "build:lib": "vue-cli-service build --target lib src/lib.js --mode production",
     "build:calendar": "vue-cli-service build --target lib --dest lib/components --name calendar src/components/Calendar.vue",
