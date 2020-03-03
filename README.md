@@ -78,7 +78,7 @@ holiday: [
 
 ### Example
 
-<img width="400" src="https://github.com/miqbalhamdani/v-calendar-custom/docs/public-holiday.png">
+<img width="400" src="https://raw.githubusercontent.com/miqbalhamdani/v-calendar-custom/master/docs/public-holiday.png">
 
 ### Attributes
 
