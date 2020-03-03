@@ -7,21 +7,78 @@
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/v-calendar"><img src="https://img.shields.io/npm/dt/v-calendar.svg" alt="Total Downloads"></a>
-    <a href="https://github.com/nathanreyes/v-calendar/releases"><img src="https://img.shields.io/npm/v/v-calendar.svg" alt="Latest Release"></a>
-    <a href="https://github.com/nathanreyes/v-calendar/releases"><img src="https://img.shields.io/npm/v/v-calendar/next.svg" alt="Next Release"></a>
+    <a href="https://www.npmjs.com/package/v-calendar-custom"><img src="https://img.shields.io/npm/dt/v-calendar.svg" alt="Total Downloads"></a>
+    <a href="https://github.com/miqbalhamdani/v-calendar-custom"><img src="https://img.shields.io/npm/v/v-calendar.svg" alt="Latest Release"></a>
+    <a href="https://github.com/miqbalhamdani/v-calendar-custom"><img src="https://img.shields.io/npm/v/v-calendar/next.svg" alt="Next Release"></a>
     <a href="https://github.com/nathanreyes/v-calendar/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/v-calendar.svg" alt="License"></a>
 </p>
 
 ------
 
 ```bash
-npm i --save v-calendar
+npm i --save v-calendar-custom
 ```
 
 ## Documentation
 
 For full documentation, visit [vcalendar.io](https://vcalendar.io/).
+
+
+
+## Public Holiday [Custom from v-caledar]
+
+```bash
+<v-calendar
+  :columns="2"
+  :step="1"
+  :masks="{ holiday: 'DD MMM' }"
+  :holiday="holiday"
+  locale="id"
+/>
+```
+
+### Holiday Data
+
+```bash
+<v-calendar
+holiday: [
+  {
+    id: 24,
+    date: '2020-03-22',
+    name: "Isra Mi'raj",
+    description: '',
+    status: 'published',
+    is_public: 1,
+    created_by: 6633,
+    updated_by: null,
+  },
+  {
+    id: 25,
+    date: '2020-03-25',
+    name: 'Hari Raya Nyepi',
+    description: '',
+    status: 'published',
+    is_public: 1,
+    created_by: 6633,
+    updated_by: null,
+  },
+  {
+    id: 26,
+    date: '2020-04-10',
+    name: 'Hari Raya Paskah',
+    description: '',
+    status: 'published',
+    is_public: 1,
+    created_by: 6633,
+    updated_by: null,
+  },
+],
+/>
+```
+
+### Example
+
+<img width="400" src="https://github.com/miqbalhamdani/v-calendar-custom/docs/public-holiday.png">
 
 ### Attributes
 
