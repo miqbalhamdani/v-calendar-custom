@@ -96,6 +96,7 @@ export default {
           columns: 7,
           columnWidth: '1fr',
           disableFocus: true,
+          holiday: this.monthHoliday,
         },
       },
       [
@@ -114,6 +115,7 @@ export default {
             attrs: {
               ...this.$attrs,
               day,
+              isHoliday: this.checkHoliday(day.id),
             },
             on: {
               ...this.$listeners,
@@ -190,6 +192,10 @@ export default {
     },
   },
   methods: {
+    checkHoliday(day) {
+      const isHoliday = this.monthHoliday.find((holiday) => holiday.date === day);
+      return !!isHoliday;
+    },
     move(page) {
       this.$emit('update:page', page);
     },

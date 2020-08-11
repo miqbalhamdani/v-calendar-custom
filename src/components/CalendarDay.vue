@@ -145,6 +145,10 @@ export default {
   inject: ['sharedState'],
   props: {
     day: { type: Object, required: true },
+    isHoliday: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -199,6 +203,7 @@ export default {
         this.isDisabled ? this.theme.dayContentDisabled : '',
         this.theme.isDark ? 'vc-is-dark' : '',
         this.theme.dayContent,
+        this.isHoliday ? 'vc-is-holiday' : '',
       ];
     },
     dayContentProps() {
@@ -595,5 +600,10 @@ export default {
   flex-grow: 1;
   height: var(--bar-height);
   transition: all var(--day-content-transition-time);
+}
+
+.vc-is-holiday {
+  font-weight: 600;
+  color: #dd2c00;
 }
 </style>

@@ -99,6 +99,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    holiday: Array,
   },
   computed: {
     containerStyle() {
