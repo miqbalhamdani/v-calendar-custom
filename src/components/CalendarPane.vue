@@ -193,8 +193,12 @@ export default {
   },
   methods: {
     checkHoliday(day) {
-      const isHoliday = this.monthHoliday.find((holiday) => holiday.date === day);
-      return !!isHoliday;
+      if (this.monthHoliday) {
+        const isHoliday = this.monthHoliday.find((holiday) => holiday.date === day);
+        return !!isHoliday;
+      }
+
+      return false;
     },
     move(page) {
       this.$emit('update:page', page);
