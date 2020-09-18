@@ -134,7 +134,6 @@ export default {
       {
         props: {
           holiday: this.monthHoliday,
-          masks: this.masks,
         },
       },
     );
@@ -184,11 +183,11 @@ export default {
     },
     monthHoliday() {
       if (this.holiday) {
-        const currentMonthYear = format(new Date(this.page.key), 'yyyy-MM');
+        const currentMonthYear = format(new Date(this.page.year, this.page.month, 1), 'yyyy-MM');
         return this.holiday.filter(day => (day.date.indexOf(currentMonthYear) !== -1));
       }
 
-      return null;
+      return [];
     },
   },
   methods: {
