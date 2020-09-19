@@ -4,7 +4,7 @@
       <strong :class="{
         'is-public': day.is_public,
         'is-mass': !day.is_public }">
-        {{ day.date | dateFormat(locale, masks.holiday) }}
+        {{ day.date }}
       </strong> {{ day.name }}
     </li>
   </ul>
@@ -20,13 +20,10 @@ export default {
     holiday: Array,
   },
 
-  filters: {
-    dateFormat(date, locale, masks) {
-      if (!date) {
-        return '';
-      }
-
-      return locale.format(new Date(date), masks);
+  methods: {
+    dateFormat(date) {
+      if (!date) return '';
+      return this.locale.format(new Date(date), this.masks.holiday);
     },
   },
 };
