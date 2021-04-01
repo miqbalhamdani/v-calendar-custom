@@ -182,7 +182,11 @@ export default {
         .map(d => this.format(d, this.masks.weekdays));
     },
     monthHoliday() {
-      return this.holiday;
+      if (this.holiday) {
+        const currentMonthYear = format(new Date(this.page.year, this.page.month - 1, 1), 'yyyy-MM');
+        return this.holiday.filter(day => (day.date.indexOf(currentMonthYear) !== -1));
+      }
+      return [];
     },
   },
   methods: {

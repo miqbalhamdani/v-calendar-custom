@@ -3,8 +3,9 @@
     <li v-for="(day, index) in holiday" :key="`holiday-${index}`">
       <strong :class="{
         'is-public': day.is_public,
-        'is-mass': !day.is_public }">
-        {{ day.date }}
+        'is-mass': !day.is_public
+      }">
+        {{ format(day.date, masks.holiday) }}
       </strong> {{ day.name }}
     </li>
   </ul>
@@ -19,13 +20,6 @@ export default {
   props: {
     holiday: Array,
   },
-
-  methods: {
-    dateFormat(date) {
-      if (!date) return '';
-      return this.locale.format(new Date(date), this.masks.holiday);
-    },
-  },
 };
 </script>
 
@@ -35,6 +29,7 @@ export default {
   margin-top: 5px;
   padding-left: 15px;
   list-style: none;
+  text-align: left;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 500;

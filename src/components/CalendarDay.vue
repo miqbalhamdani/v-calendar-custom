@@ -121,6 +121,16 @@ export default {
         ],
       );
 
+    const todayHighlight = () =>
+      this.hasTodayHighlight &&
+      h(
+        'div',
+        {
+          class: 'vc-today-highlight',
+        },
+        (this.locale.id === 'en') ? 'Today' : 'Hari ini',
+      );
+
     // Root layer
     return h(
       'div',
@@ -132,10 +142,15 @@ export default {
         ],
       },
       [
+        [todayHighlight()],
         h(
           'div',
           {
-            class: ['vc-h-full', { [this.theme.dayNotInMonth]: !this.inMonth }],
+            class: [
+              'vc-h-full',
+              { [this.theme.dayNotInMonth]: !this.inMonth },
+              { 'vc-is-highlight-today': this.hasTodayHighlight },
+            ],
           },
           [backgroundsLayer(), contentWrapperLayer(), dotsLayer(), barsLayer()],
         ),
@@ -195,6 +210,10 @@ export default {
     },
     hasPopovers() {
       return !!arrayHasItems(this.popovers);
+    },
+    hasTodayHighlight() {
+      const { isToday, inMonth, } = this.day;
+      return !!isToday && !!inMonth && !this.hasBackgrounds;
     },
     dayContentClass() {
       return [
@@ -605,5 +624,18 @@ export default {
 .vc-is-holiday {
   font-weight: 600;
   color: #dd2c00;
+}
+
+.vc-today-highlight {
+  position: absolute;
+  top: -5px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 500;
+  color: #323c9f;
+}
+
+.vc-is-highlight-today {
+  color: #323c9f;
 }
 </style>
